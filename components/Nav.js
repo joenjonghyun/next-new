@@ -57,7 +57,6 @@ export function Nav(){
   };
 
   
-
   useEffect(() => {
     const loginUser = localStorage.getItem("loginUser")
     if (loginUser === null) {
@@ -107,7 +106,7 @@ export function Nav(){
     }
   }
   return (
-    <AppBar position="static" style={{marginBottom:"70px"}}>
+    <AppBar position="static" style={{marginBottom:"20px"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
