@@ -3,12 +3,10 @@ import {Nav, Footer, Header, Table, Pagination, Modal} from "@/components";
 export function Layout({children}) {
     return (
         <div className={style.container}>
-            <Header/>
-            <Nav/>
             <main className={style.main}>{children}</main>
+            {children}
             <Table/>
             <Pagination/>
-            <Footer/>
             <Modal/>
         </div>
 
