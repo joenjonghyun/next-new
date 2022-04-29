@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React, {useState} from 'react';
+//import { useDispatch } from 'react-redux';
+//import { userActions } from '../../redux/reducers/userReducer';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -28,12 +30,13 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export function Login(){
+export function Login({onChange, onSubmit}){
+ 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
-        <Box
+        <Box 
           sx={{
             marginTop: 8,
             display: 'flex',
@@ -47,7 +50,8 @@ export function Login(){
           <Typography component="h1" variant="h5">
             로그인
           </Typography>
-          <Box component="form"  noValidate sx={{ mt: 1 }}>
+          
+          <Box component="form"  noValidate sx={{ mt: 1 }} onSubmit={onSubmit}>
             <TextField
               margin="normal"
               required
@@ -57,6 +61,7 @@ export function Login(){
               name="userid"
               autoComplete="email"
               autoFocus
+              onChange={onChange}
             />
             <TextField
               margin="normal"
@@ -67,6 +72,7 @@ export function Login(){
               type="password"
               id="password"
               autoComplete="current-password"
+              onChange={onChange}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -93,6 +99,7 @@ export function Login(){
               </Grid>
             </Grid>
           </Box>
+
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
